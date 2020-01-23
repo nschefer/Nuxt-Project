@@ -3,32 +3,16 @@
     <section class="intro">
       <h1>Get the Latest Tech News</h1>
     </section>
-    <section class="featured-posts">
-      <PostPreview
-        id="1"
-        thumbnail="https://bentrepreneur.biz/wp-content/uploads/2019/02/tech-1000x624.jpg"
-        title="Hello There!"
-        previewText="This is my first post!" />
-      <PostPreview
-        id="2"
-        thumbnail="https://bentrepreneur.biz/wp-content/uploads/2019/02/tech-1000x624.jpg"
-        title="Hello There from the Future!"
-        previewText="This is my second post!" />
-      <PostPreview
-        id="1"
-        thumbnail="https://bentrepreneur.biz/wp-content/uploads/2019/02/tech-1000x624.jpg"
-        title="Hello There from the Past !"
-        previewText="This is my third post!" />
-    </section>
+    <PostList />
   </div>
 </template>
 
 <script>
-import PostPreview from '~/components/Posts/PostPreview';
+import PostList from '~/components/Posts/PostList';
 
 export default {
   components: {
-    PostPreview,
+    PostList,
   },
 };
 </script>
