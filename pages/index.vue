@@ -3,7 +3,7 @@
     <section class="intro">
       <h1>Get the Latest Tech News</h1>
     </section>
-    <PostList />
+    <PostList :posts="loadedPosts" />
   </div>
 </template>
 
@@ -13,6 +13,26 @@ import PostList from '~/components/Posts/PostList';
 export default {
   components: {
     PostList,
+  },
+  data() {
+    return {
+      loadedPosts: [
+        {
+          id: '1',
+          title: 'First Post',
+          previewText: 'This is our first post',
+          thumbnail:
+            'https://bentrepreneur.biz/wp-content/uploads/2019/02/tech-1000x624.jpg',
+        },
+        {
+          id: '2',
+          title: 'Second Post',
+          previewText: 'This is our second post',
+          thumbnail:
+            'https://bentrepreneur.biz/wp-content/uploads/2019/02/tech-1000x624.jpg',
+        },
+      ],
+    };
   },
 };
 </script>
