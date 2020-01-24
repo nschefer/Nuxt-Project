@@ -1,18 +1,40 @@
 <template>
   <div class="single-post-page">
     <section class="post">
-      <h1 class="post-title">Title of the Post</h1>
+      <h1 class="post-title">{{loadedPost.title}}</h1>
       <div class="post-details">
-        <div class="post-detail">Last Updated on XXX</div>
-        <div class="post-detail">Written by Name</div>
+        <div class="post-detail">Last Updated on {{loadedPost.updatedDate}}</div>
+        <div class="post-detail">Written by {{loadedPost.author}}</div>
       </div>
-      <p class="post-content">Content of the Post</p>
+      <p class="post-content">{{loadedPost.content}}</p>
     </section>
     <section class="post-feedback">
       <p>Let me know what you think about the post, send a message to <a href="mailto:feedback@nuxt-project.com">feedback@nuxt-project.com</a></p>
     </section>
   </div>
 </template>
+
+<script>
+export default {
+  asyncData(context, callback) {
+    setTimeout(() => {
+      callback(null, {
+        loadedPost: {
+          id: '1',
+          title: 'First Post (ID: ' + context.params.id + ')',
+          previewText: 'This is our first post',
+          author: 'Noah',
+          updatedDate: new Date(),
+          content:
+            'Some dummy text which is totally and completely different than the preview text you saw before!',
+          thumbnail:
+            'https://bentrepreneur.biz/wp-content/uploads/2019/02/tech-1000x624.jpg',
+        },
+      });
+    }, 1000);
+  },
+};
+</script>
 
 <style scoped>
 .single-post-page {
