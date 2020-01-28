@@ -42,6 +42,8 @@ export default {
       });
   },
 };
+
+console.log('test test test test test test');
 </script>
 
 <style scoped>
