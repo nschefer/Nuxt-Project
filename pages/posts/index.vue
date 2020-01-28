@@ -42,8 +42,6 @@ export default {
       });
   },
 };
-
-console.log('ANOTHER FUCKING TEST');
 </script>
 
 <style scoped>
