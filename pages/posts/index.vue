@@ -11,27 +11,35 @@ export default {
   components: {
     PostList,
   },
-  asyncData(context, callback) {
-    setTimeout(() => {
-      callback(new Error(), {
-        loadedPosts: [
-          {
-            id: '1',
-            title: 'First Post',
-            previewText: 'This is our first post',
-            thumbnail:
-              'https://bentrepreneur.biz/wp-content/uploads/2019/02/tech-1000x624.jpg',
-          },
-          {
-            id: '2',
-            title: 'Second Post',
-            previewText: 'This is our second post',
-            thumbnail:
-              'https://bentrepreneur.biz/wp-content/uploads/2019/02/tech-1000x624.jpg',
-          },
-        ],
+  asyncData(context) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve({
+          loadedPosts: [
+            {
+              id: '1',
+              title: 'First Post',
+              previewText: 'This is our first post',
+              thumbnail:
+                'https://bentrepreneur.biz/wp-content/uploads/2019/02/tech-1000x624.jpg',
+            },
+            {
+              id: '2',
+              title: 'Second Post',
+              previewText: 'This is our second post',
+              thumbnail:
+                'https://bentrepreneur.biz/wp-content/uploads/2019/02/tech-1000x624.jpg',
+            },
+          ],
+        });
+      }, 1500);
+    })
+      .then(data => {
+        return data;
+      })
+      .catch(e => {
+        context.error(e);
       });
-    }, 1500);
   },
 };
 </script>
