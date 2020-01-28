@@ -43,7 +43,7 @@ export default {
   },
 };
 
-console.log('test again');
+console.log('test again again again again');
 </script>
 
 <style scoped>
