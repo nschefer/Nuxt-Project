@@ -34,6 +34,7 @@ export default {
     },
   },
   data() {
+    console.log(this.editedPost);
     return {
       editedPost: this.post
         ? { ...this.post }

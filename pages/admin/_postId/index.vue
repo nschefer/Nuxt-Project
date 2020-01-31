@@ -8,22 +8,25 @@
 
 <script>
 import AdminPostForm from '~/components/Admin/AdminPostForm';
+import axios from 'axios';
 
 export default {
   layout: 'admin',
   components: {
     AdminPostForm,
   },
-  data() {
-    return {
-      loadedPost: {
-        author: 'Noah',
-        title: 'My Awesome Post',
-        content: 'THIS IS A GREAT POST HOLY SHIT',
-        thumbnailLink:
-          'https://www-tc.pbs.org/wgbh/nova/media/images/nova-wonders-can-we-build-a-brain-hero_xn7Rr8X.width-800.jpg',
-      },
-    };
+  asyncData(context) {
+    return axios
+      .get(
+        `https://noahs-nuxt-project.firebaseio.com/posts/${context.params.postId}.json`
+      )
+      .then(({ data }) => {
+        console.log(data);
+        return {
+          loadedPost: data,
+        };
+      })
+      .catch(e => context.error(e));
   },
 };
 </script>
