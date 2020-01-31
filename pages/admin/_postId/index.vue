@@ -21,7 +21,7 @@ export default {
         title: 'My Awesome Post',
         content: 'THIS IS A GREAT POST HOLY SHIT',
         thumbnailLink:
-          'https://bentrepreneur.biz/wp-content/uploads/2019/02/tech-1000x624.jpg',
+          'https://www-tc.pbs.org/wgbh/nova/media/images/nova-wonders-can-we-build-a-brain-hero_xn7Rr8X.width-800.jpg',
       },
     };
   },

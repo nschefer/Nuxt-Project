@@ -28,7 +28,7 @@ export default {
           content:
             'Some dummy text which is totally and completely different than the preview text you saw before!',
           thumbnail:
-            'https://bentrepreneur.biz/wp-content/uploads/2019/02/tech-1000x624.jpg',
+            'https://www-tc.pbs.org/wgbh/nova/media/images/nova-wonders-can-we-build-a-brain-hero_xn7Rr8X.width-800.jpg',
         },
       });
     }, 1000);

@@ -21,14 +21,14 @@ export default {
               title: 'First Post',
               previewText: 'This is our first post',
               thumbnail:
-                'https://bentrepreneur.biz/wp-content/uploads/2019/02/tech-1000x624.jpg',
+                'https://www-tc.pbs.org/wgbh/nova/media/images/nova-wonders-can-we-build-a-brain-hero_xn7Rr8X.width-800.jpg',
             },
             {
               id: '2',
               title: 'Second Post',
               previewText: 'This is our second post',
               thumbnail:
-                'https://bentrepreneur.biz/wp-content/uploads/2019/02/tech-1000x624.jpg',
+                'https://www-tc.pbs.org/wgbh/nova/media/images/nova-wonders-can-we-build-a-brain-hero_xn7Rr8X.width-800.jpg',
             },
           ],
         });
@@ -40,6 +40,9 @@ export default {
       .catch(e => {
         context.error(e);
       });
+  },
+  created() {
+    this.$store.dispatch('setPosts', this.loadedPosts);
   },
 };
 </script>
