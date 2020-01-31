@@ -15,23 +15,21 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
-  asyncData(context, callback) {
-    setTimeout(() => {
-      callback(null, {
-        loadedPost: {
-          id: '1',
-          title: 'First Post (ID: ' + context.params.id + ')',
-          previewText: 'This is our first post',
-          author: 'Noah',
-          updatedDate: new Date(),
-          content:
-            'Some dummy text which is totally and completely different than the preview text you saw before!',
-          thumbnail:
-            'https://www-tc.pbs.org/wgbh/nova/media/images/nova-wonders-can-we-build-a-brain-hero_xn7Rr8X.width-800.jpg',
-        },
-      });
-    }, 1000);
+  asyncData(context) {
+    console.log(context.params);
+    return axios
+      .get(
+        `https://noahs-nuxt-project.firebaseio.com/posts/${context.params.id}.json`
+      )
+      .then(({ data }) => {
+        return {
+          loadedPost: data,
+        };
+      })
+      .catch(e => context.error(e));
   },
 };
 </script>
