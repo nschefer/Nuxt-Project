@@ -14,34 +14,11 @@ export default {
   components: {
     PostList,
   },
-  asyncData(context, callback) {
-    setTimeout(() => {
-      callback(null, {
-        loadedPosts: [
-          {
-            id: '1',
-            title: 'First Post',
-            previewText: 'This is our first post',
-            thumbnail:
-              'https://www-tc.pbs.org/wgbh/nova/media/images/nova-wonders-can-we-build-a-brain-hero_xn7Rr8X.width-800.jpg',
-          },
-          {
-            id: '2',
-            title: 'Second Post',
-            previewText: 'This is our second post',
-            thumbnail:
-              'https://www-tc.pbs.org/wgbh/nova/media/images/nova-wonders-can-we-build-a-brain-hero_xn7Rr8X.width-800.jpg',
-          },
-        ],
-      });
-    }, 1500);
+  computed: {
+    loadedPosts() {
+      return this.$store.getters.loadedPosts;
+    },
   },
-  // data() {
-  //   return {
-  //     loadedPosts: [],
-  //   };
-  // },
-  created() {},
 };
 </script>
 
