@@ -56,5 +56,8 @@ export default {
   },
   env: {
     baseUrl: process.env.BASE_URL || 'https://noahs-nuxt-project.firebaseio.com'
+  },
+  router: {
+    linkActiveClass: 'active'
   }
 }
