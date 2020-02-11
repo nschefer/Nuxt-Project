@@ -17,9 +17,7 @@ export default {
   },
   asyncData(context) {
     return axios
-      .get(
-        `https://noahs-nuxt-project.firebaseio.com/posts/${context.params.postId}.json`
-      )
+      .get(`${process.env.baseUrl}/posts/${context.params.postId}.json`)
       .then(({ data }) => {
         console.log(data);
         return {

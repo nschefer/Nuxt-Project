@@ -53,5 +53,8 @@ export default {
     */
     extend(config, ctx) {
     }
+  },
+  env: {
+    baseUrl: process.env.BASE_URL || 'https://noahs-nuxt-project.firebaseio.com'
   }
 }
